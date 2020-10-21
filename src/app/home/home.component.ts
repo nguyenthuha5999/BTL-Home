@@ -12,6 +12,9 @@ import 'rxjs/add/operator/takeUntil';
 export class HomeComponent extends BaseComponent implements OnInit {
   list_item:any;
   spkm:any;
+  sptot:any;
+  _cart: any;
+
   constructor(injector: Injector) { 
     super(injector);
   }
@@ -33,5 +36,17 @@ export class HomeComponent extends BaseComponent implements OnInit {
         this.loadScripts();
       });
     }, err => { });
+    Observable.combineLatest(
+      this._api.get('/api/sanpham/get-sptot'),
+    ).takeUntil(this.unsubscribe).subscribe(res => {
+      this.sptot = res[0];
+      setTimeout(() => {
+        this.loadScripts();
+      });
+    }, err => { });
+  }
+  addToCart(it) { 
+    this._cart.addToCart(it);
+    alert('Thêm thành công!'); 
   }
 }

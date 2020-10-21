@@ -154,10 +154,9 @@
                                                 <figcaption>
                                                     <p><span class="new-sale">new</span></p>
                                                     <ul class="cart-icon">
-                                                        <li><a href="#"><span class="add-to-wish">add to wishlist</span><i class="fa fa-heart" aria-hidden="true"></i></a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="add-to-wish">quick view</span><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><span class="add-to-wish">buy now</span><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><span class="add-to-wish">quick link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                                                        <li><a (click)="addToCart(it)"><span class="add-to-wish" (click)="addToCart(it)">Thêm vào Giỏ</span><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                                        <li><a routerLink="/detail/{{it.masp}}"><span class="add-to-wish">Xem chi tiết</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
                                                     </ul>
                                                 </figcaption>
                                             </figure>
@@ -210,7 +209,7 @@
         <div class="row">
             <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="journey-heading">
-                    <h4><span>best product</span></h4>
+                    <h4><span>Sản Phẩm Tốt Nhất</span></h4>
                 </div>
             </div>
             <div class="col-md-7 col-sm-7 col-xs-12">
@@ -225,7 +224,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12 padT30">
                 <div class="row">
                     <div id="MixItUp1">
-                        <ng-container *ngFor="let it of list_item">
+                        <ng-container *ngFor="let it of sptot">
                         <div class="col-md-3 col-sm-6 col-xs-12 marB30 mix cat1">
                             <div class="arrival-image">
                                 <div class="arrival-image-overlay">
@@ -234,10 +233,9 @@
                                         <img src="assets/images/{{it.hinhanh}}" alt="">
                                         <figcaption>
                                             <ul class="cart-icon">
-                                                <li><a href="#"><span class="add-to-wish">add to wishlist</span><i class="fa fa-heart" aria-hidden="true"></i></a></li>
                                                 <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="add-to-wish">quick view</span><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><span class="add-to-wish">buy now</span><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><span class="add-to-wish">quick link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                                                <li><a (click)="addToCart(it)"><span class="add-to-wish">Thêm vào Giỏ</span><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                                <li><a routerLink="/detail/{{it.masp}}"><span class="add-to-wish">Xem chi tiết</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </figcaption>
                                     </figure>
