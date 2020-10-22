@@ -1468,8 +1468,8 @@ span.overlay {
     display: inline-block;
 }
 .template-button {
-    background-color: #000;
-    border-color: #000;
+    background-color: #f1a6a6;
+    border-color:#f1a6a6;
     color: #fff;
     text-transform: uppercase;
     padding: 7px 30px;
